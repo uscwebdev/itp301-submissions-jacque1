@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment 1: JS Photo Gallery</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: auto;
+        }
+
+        #main-image img {
+            width: 30%;
+            height: auto;
+            margin: 20px auto;
+        }
+
+        .thumbnails {
+            display: flex;
+            justify-content: center;
+        }
+
+        .thumbnails img {
+            width: 10%;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .thumbnails img:hover {
+            border-color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>Classic Cocktails</h1>
+
+    <div id="main-image">
+        <img src="img/long-island.jpg" alt="long island">
+    </div>
+
+    <div class="thumbnails">
+            <img class="thumbnail1" src="img/long-island.jpg" alt="long island">
+
+            <img class="thumbnail2" src="img/mimosa.jpg" alt="mimosa">
+
+            <img class="thumbnail3" src="img/old-fashioned.jpg" alt="old fashioned">
+
+            <img class="thumbnail4" src="img/pina-colada.jpg" alt="pina colada">
+
+            <img class="thumbnail5" src="img/tequila-sunrise.jpg" alt="tequila sunrise">
+
+    </div>
+
+    <script>
+        document.querySelector('.thumbnail1').onclick = function(){
+			document.querySelector('#main-image img').src = "img/long-island.jpg";
+			document.querySelector('#main-image').alt = "long island";
+        }
+        document.querySelector('.thumbnail2').onclick = function(){
+			document.querySelector('#main-image img').src = "img/mimosa.jpg";
+			document.querySelector('#main-image img').alt = "mimosa";
+        }
+        document.querySelector('.thumbnail3').onclick = function(){
+			document.querySelector('#main-image img').src = "img/old-fashioned.jpg";
+			document.querySelector('#main-image img').alt = "old fashioned";
+        }
+        document.querySelector('.thumbnail4').onclick = function(){
+			document.querySelector('#main-image img').src = "img/pina-colada.jpg";
+			document.querySelector('#main-image img').alt = "pina colada";
+        }
+        document.querySelector('.thumbnail5').onclick = function(){
+			document.querySelector('#main-image img').src = "img/tequila-sunrise.jpg";
+			document.querySelector('#main-image img').alt = "tequila sunrise";
+        }
+    </script>
+</body>
+</html>
