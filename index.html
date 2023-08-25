@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Full Name | Student Page</title>
+    <style> 
+        #main {
+            margin: auto;
+            text-align: center;
+        }
+        #section1 a {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        #section2 {
+            display: flex;
+            margin-top: 40px;
+        }
+
+        #section2_left, #section2_right {
+            margin: 2px 80px; 
+            flex-direction: row;
+            
+        }
+        #section2 a {
+            font-size: 20px;
+            text-decoration: none; 
+        }
+
+        button {
+            margin-top: 50px;
+            font-size: 18px; 
+            padding: 10px 20px; 
+            background-color: rgb(213, 213, 213);
+            border-radius: 5px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="section1">
+            <h1>Jacquelyn Li</h1>
+            <a href="mailto:youremail@example.com">lijacque@usc.edu</a>
+        </div>
+        
+        <button id="fav-color">Favorite Color</button>
+        
+        <div class="container">
+            <div id="section2">
+                <div id="section2_left">
+                    <h2>Assignments:</h2>
+                    <hr>
+                </div>
+                <div id="section2_right">
+                    <h2>Labs:</h2>
+                    <hr>
+                    <a href="index.html">Lab 1: Student Page</a>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        document.querySelector('#fav-color').onclick = function(){
+			document.querySelector('body').style.backgroundColor = '#FFA500';
+        }
+    </script>
+</body>
+</html>
