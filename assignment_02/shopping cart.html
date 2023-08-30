@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shopping Cart | Assignment 2</title>
+        <style> 
+        h1{
+            background-position: center;
+			background-size: cover;
+            background-color: gainsboro;
+			font-size: 2em;
+			text-align: center;
+			line-height: 100px;
+        }
+        #footer{
+			background-color: #999;
+			text-align: center;
+			color: #FFF;
+			line-height: 50px;
+		}
+        .container{
+            display: flex;
+			flex-direction: row;
+            justify-content: center;
+        }
+
+        .thumbnail {
+            border-radius: 5px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .thumbnail img{
+            width: 300px;
+            height: auto;
+        }
+        .thumbnail img:hover {
+            opacity: 70%;
+        }
+        .total{
+            text-align: right;
+            margin-right: 100px;
+        }
+
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <h1>My Cart</h1>
+            <div class = "container">
+                <div class="thumbnail">
+                    <img class="pic1" src="img/s33.jpg" alt="s33">
+                    <p>Santal 33 Perfume</p>
+                    USD: $<span id="pic1">330</span>
+                </div>
+                <div class="thumbnail">
+                    <img class="pic2" src="img/matcha.jpg" alt="matcha">
+                    <p>The Matcha 26 Refill Set</p>
+                    USD: $<span id="pic2">180</span>
+                </div>
+                <div class="thumbnail">
+                    <img class="pic3" src="img/another.jpg" alt="another">
+                    <p>Another 13 Perfuming Body Lotion</p>
+                    USD: $<span id="pic3">79</span>
+                </div>
+            </div>
+            <div class="total">
+                <h3>Cart Total: $<span id="sum">0</span></h3>
+            </div>
+            
+        </div>
+        <div id="footer">
+            <p>@2023 University of Southern California</p>
+        </div>
+
+    
+    <script>
+        /* workflow
+            global variable: var total = 0
+            1. user clicks on one product (onclick)
+            2. save the price in price variable
+            3. convert price to a numeric value
+            4. increment total
+            5. display total   
+        */
+
+        var total = 0;
+        document.querySelector('.pic1').onclick = function(){
+			//2. save the price in price variable
+			var price = document.querySelector('#pic1').innerHTML;
+			//3. convert price to a numeric value
+			price = parseInt(price);
+			//4. increment total
+			total = total + price;
+			//5. display total
+			document.querySelector('#sum').innerHTML = total;
+        }
+        document.querySelector('.pic2').onclick = function(){
+			//2. save the price in price variable
+			var price = document.querySelector('#pic2').innerHTML;
+			//3. convert price to a numeric value
+			price = parseInt(price);
+			//4. increment total
+			total = total + price;
+			//5. display total
+			document.querySelector('#sum').innerHTML = total;
+        }
+        document.querySelector('.pic3').onclick = function(){
+			//2. save the price in price variable
+			var price = document.querySelector('#pic3').innerHTML;
+			//3. convert price to a numeric value
+			price = parseInt(price);
+			//4. increment total
+			total = total + price;
+			//5. display total
+			document.querySelector('#sum').innerHTML = total;
+        }
+        
+    </script>
+    </body>
+
+</html>
