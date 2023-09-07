@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Calculator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+	<style>
+		#display {
+			font-size: 2em;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<h1 class="col-12 text-center mt-5">JS Calculator</h1>
+		</div> <!-- .row -->
+		<div class="row">
+			<div id="calculator" class="mt-4 col-12 col-md-6 ml-md-auto mr-md-auto col-lg-4">
+				<div class="row">
+					<input type="text" id="display" class="col-12 text-right form-control" value="0">
+				</div> <!-- .row -->
+				<div class="row">
+					<button class="col-9 btn btn-lg btn-outline-dark" id="op-clear">AC</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="op-div">/</button>
+				</div> <!-- .row -->
+				<div class="row">
+					<button class="col-3 btn btn-lg btn-outline-dark" id="num7" >7</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="num8">8</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="num9">9</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="op-mul">x</button>
+				</div> <!-- .row -->
+				<div class="row">
+					<button class="col-3 btn btn-lg btn-outline-dark" id="num4">4</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="num5">5</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="num6">6</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="op-sub">-</button>
+				</div> <!-- .row -->
+				<div class="row">
+					<button class="col-3 btn btn-lg btn-outline-dark" id="num1">1</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="num2">2</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="num3">3</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="op-add">+</button>
+				</div> <!-- .row -->
+				<div class="row">
+					<button class="col-6 btn btn-lg btn-outline-dark" id="num0">0</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="op-dec">.</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="op-equal">=</button>
+				</div> <!-- .row -->
+			</div> <!-- #calculator -->
+		</div> <!-- .row -->
+	</div> <!-- .container -->
+	<script>
+		var curr_num = '0';
+        var operation = '';
+        var input = 0;
+        var decimal = false;
+
+        // Number Buttons
+        document.querySelector('#num1').onclick = function(){
+            if (curr_num === '0') {
+                curr_num = '';
+            }
+            curr_num += '1';
+            document.querySelector('#display').value = curr_num;
+        }
+
+        document.querySelector('#num2').onclick = function(){
+            if (curr_num === '0') {
+                curr_num = '';
+            }
+            curr_num += '2';
+            document.querySelector('#display').value = curr_num;
+        }
+
+        document.querySelector('#num3').onclick = function(){
+            if (curr_num === '0') {
+                curr_num = '';
+            }
+            curr_num += '3';
+            document.querySelector('#display').value = curr_num;
+        }
+
+        document.querySelector('#num4').onclick = function(){
+            if (curr_num === '0') {
+                curr_num = '';
+            }
+            curr_num += '4';
+            document.querySelector('#display').value = curr_num;
+        }
+
+        document.querySelector('#num5').onclick = function(){
+            if (curr_num === '0') {
+                curr_num = '';
+            }
+            curr_num += '5';
+            document.querySelector('#display').value = curr_num;
+        }
+
+        document.querySelector('#num6').onclick = function(){
+            if (curr_num === '0') {
+                curr_num = '';
+            }
+            curr_num += '6';
+            document.querySelector('#display').value = curr_num;
+        }
+
+        document.querySelector('#num7').onclick = function(){
+            if (curr_num === '0') {
+                curr_num = '';
+            }
+            curr_num += '7';
+            document.querySelector('#display').value = curr_num;
+        }
+
+        document.querySelector('#num8').onclick = function(){
+            if (curr_num === '0') {
+                curr_num = '';
+            }
+            curr_num += '8';
+            document.querySelector('#display').value = curr_num;
+        }
+
+        document.querySelector('#num9').onclick = function(){
+            if (curr_num === '0') {
+                curr_num = '';
+            }
+            curr_num += '9';
+            document.querySelector('#display').value = curr_num;
+        }
+
+        document.querySelector('#num0').onclick = function(){
+            if (curr_num === '0') {
+                curr_num = '';
+            }
+            curr_num += '0';
+            document.querySelector('#display').value = curr_num;
+        }
+
+        // Decimal Operation
+        document.querySelector('#op-dec').onclick = function(){
+            if (!decimal) {
+                curr_num += '.';
+                document.querySelector('#display').value = curr_num;
+                decimal = true;
+            }
+        }
+        // Performing Operations
+        document.querySelector('#op-add').onclick = function(){
+            operation = 'add';
+            input = parseFloat(curr_num);
+            curr_num = '0';
+            decimal = false;
+			document.querySelector('#display').value = curr_num;
+        }
+        document.querySelector('#op-sub').onclick = function(){
+            operation = 'sub';
+            input = parseFloat(curr_num);
+            curr_num = '0';
+            decimal = false;
+			document.querySelector('#display').value = curr_num;
+        }
+        document.querySelector('#op-mul').onclick = function(){
+            operation = 'mul';
+            input = parseFloat(curr_num);
+            curr_num = '0';
+            decimal = false;
+			document.querySelector('#display').value = curr_num;
+        }
+        document.querySelector('#op-div').onclick = function(){
+            operation = 'div';
+            input = parseFloat(curr_num);
+            curr_num = '0';
+            decimal = false;
+			document.querySelector('#display').value = curr_num;
+        }
+
+        // When Equal Sign is Pressed
+        document.querySelector('#op-equal').onclick = function(){
+			if (operation === 'add') {
+                curr_num = (input + parseFloat(curr_num));
+            } else if (operation === 'sub') {
+                curr_num = (input - parseFloat(curr_num));
+            } else if (operation === 'mul') {
+                curr_num = (input * parseFloat(curr_num));
+            } else if (operation === 'div') {
+                curr_num = (input / parseFloat(curr_num));
+            }
+            document.querySelector('#display').value = curr_num;
+        }
+
+        // All Clear Operation
+        document.querySelector('#op-clear').onclick = function(){
+            curr_num = '0';
+            operation = '';
+            decimal = false;
+            document.querySelector('#display').value = curr_num;
+        }
+
+
+	</script>
+</body>
+</html>
