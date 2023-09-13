@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Assignment 4: Liar's Dice</title>
+
+	<style>
+		body {
+			font-size: 1.5em;
+            font-family: Arial, sans-serif;
+            margin: auto;
+		}
+
+		h1, h3{
+			margin-left: 10%;
+		}
+		.content{
+            display: flex;
+			flex-direction: column;
+            justify-content: center;
+        }
+        .text{
+            margin-top: 20px;
+            display: flex;
+			flex-direction: row;
+        }
+		.guess{
+			margin-top: 30px;
+			margin-left: 20px;
+			width: 200px; 
+			height: 30px;
+		}
+		
+		.guessbtn{
+			margin-top: 30px;
+			width: 100px; 
+			height: 35px;
+			font-size: 18px;
+			background-color: #24a0ed;
+			border-color:#e4eefc;
+			color:white;
+		}
+
+		.dice {
+			margin-left: 10%;
+		}
+
+		.dice img {
+			width: 100px;
+			padding: 15px;
+		}
+
+	</style>
+
+</head>
+<body>
+	<div class="header">
+		<h1>Liar's Dice</h1>
+	</div>
+
+	<div class="content">
+		<div class = "text">
+			<h3>Your Guess: </h3>
+			<input type="text" class="guess">
+			<button class="guessbtn">Submit </button>
+		</div>
+
+		<div class="roll">
+			<h3>Roll Results: <span class="result"> </span></h3>
+		</div>
+
+		<div class="dice">
+			<img src="dice_images/1.png" alt="dice1">
+			<img src="dice_images/1.png" alt="dice1">
+			<img src="dice_images/1.png" alt="dice1">
+			<img src="dice_images/1.png" alt="dice1">
+			<img src="dice_images/1.png" alt="dice1">
+		</div>
+	</div>
+
+
+	<script>
+		// Array to store the rolled dice numbers
+		var numbers = [];
+		// Array to store dice image elements
+		var images = document.querySelectorAll('.dice img');
+		// Function to change the image source based on dice number
+		function changeImg(num) {
+			return "dice_images/" + num + ".png";
+		}
+		// When the user submits a guess
+		document.querySelector(".guessbtn").onclick = function() {
+			var guess = parseInt(document.querySelector('.guess').value);
+			// Clear the input field
+			document.querySelector('.guess').value = '';
+
+			// Populate the numbers array with 5 random integers
+			for (var i = 0; i < 5; i++) {
+				numbers[i] = Math.floor(Math.random() * 6 + 1);	
+			}
+			// Loop through images and change them to match the rolled numbers
+			for (var j = 0; j < 5; j++) {
+				images[j].src = changeImg(numbers[j]);
+			}
+			// Check if the user's guess matches any of the rolled numbers
+			if (numbers.indexOf(guess) == -1) {
+				document.querySelector('.result').innerHTML = "Try Again!";
+				document.querySelector('.result').style.color = 'red';
+			}
+			else{
+				document.querySelector('.result').innerHTML = "Correct Guess!";
+				document.querySelector('.result').style.color = 'green';
+			}
+		}
+	</script>
+</body>
+</html>
