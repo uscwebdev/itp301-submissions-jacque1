@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment 1: JS Photo Gallery</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: auto;
+        }
+
+        #main-image img {
+            width: 30%;
+            height: auto;
+            margin: 20px auto;
+        }
+
+        .thumbnails {
+            display: flex;
+            justify-content: center;
+        }
+
+        .thumbnails img {
+            width: 10%;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .thumbnails img:hover {
+            border-color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>Classic Cocktails</h1>
+
+    <div id="main-image">
+        <img src="img/long-island.jpg" alt="long island">
+    </div>
+
+    <div class="thumbnails">
+            <img class="pic" src="img/long-island.jpg" alt="long island">
+            <img class="pic" src="img/mimosa.jpg" alt="mimosa">
+            <img class="pic" src="img/old-fashioned.jpg" alt="old fashioned">
+            <img class="pic" src="img/pina-colada.jpg" alt="pina colada">
+            <img class="pic" src="img/tequila-sunrise.jpg" alt="tequila sunrise">
+
+    </div>
+
+    <script>
+    /*    document.querySelector('.thumbnail1').onclick = function(){
+			document.querySelector('#main-image img').src = "img/long-island.jpg";
+			document.querySelector('#main-image').alt = "long island";
+        }
+        document.querySelector('.thumbnail2').onclick = function(){
+			document.querySelector('#main-image img').src = "img/mimosa.jpg";
+			document.querySelector('#main-image img').alt = "mimosa";
+        }
+        document.querySelector('.thumbnail3').onclick = function(){
+			document.querySelector('#main-image img').src = "img/old-fashioned.jpg";
+			document.querySelector('#main-image img').alt = "old fashioned";
+        }
+        document.querySelector('.thumbnail4').onclick = function(){
+			document.querySelector('#main-image img').src = "img/pina-colada.jpg";
+			document.querySelector('#main-image img').alt = "pina colada";
+        }
+        document.querySelector('.thumbnail5').onclick = function(){
+			document.querySelector('#main-image img').src = "img/tequila-sunrise.jpg";
+			document.querySelector('#main-image img').alt = "tequila sunrise";
+        }
+    */
+
+
+    //array variable for thumbnails
+    var thumbnail = document.querySelectorAll('.pic');
+    var mainImage = document.querySelector('#main-image img');
+    var caption = document.querySelector('#main-image alt'); // Select the caption paragraph
+
+    // Click on image function
+    function clickImg(newSrc, newAlt) {
+        mainImage.src = newSrc;
+        mainImage.alt = newAlt;
+    }
+
+    // Loop through array to bind
+    for (var i = 0; i < thumbnail.length; i++) {
+        thumbnail[i].onclick = function() {
+            var newSrc = this.src;
+            var newAlt = this.alt;
+            clickImg(newSrc, newAlt);
+            console.log(newAlt);
+        }
+    }
+    </script>
+</body>
+</html>
