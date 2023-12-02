@@ -5,49 +5,58 @@
         <style> 
 
         h1{
-            color: #F39FA6;
+            color: #674188;
             font-size: 2em;
             text-align: center;
             margin-top: 20px;
+            background-color: #F7EFE5;
         }
         h2{
-            text-align: center;
-            color:#F39FA6;
+            color:#674188;
+            text-decoration: overline;
+            margin-bottom: 10px;
+            margin-left: 10%;
         }
-        h3{
-            text-align: center;
-            color:gray;
+        h3, h4{
+            font-weight: bold;
+            margin-left: 13%;
+            margin-right: 16%;
+            color:black;
+            background-color: #F7EFE5;
+            margin-top: 30px;
         }
+       
         #main{
-            width: 80%;
+            width: 90%;
             margin: auto;
         }
         p{
-            width: 63%;
+            width: 70%;
             margin: auto;
             font-size: 1.1em;
-            color:#6AA2BB;
+            color: black;
         }
-        #color, ol{
-            width: 50%;
+        img{
+            width: 40%;
+            height: auto;
             display: block;
-            margin: 0 auto;
-            font-size: 1.1em;
-            color:#6AA2BB;
-        }
-        .img img {
-            display: inline-block;
-            margin: 0 10px; 
-            margin-bottom: 30px;
-            width: 30%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: auto;
+            margin-right: auto;
         }
         #footer{
+            margin-top: 30px;
             text-align: center;
-            background-color:#FCDCCF;
-            color: #6AA2BB;
+            background-color:#F7EFE5;
             height: 30px;
             font-weight: bold;
         }
+
+        #footer p{
+            color: #674188;
+        }
+
         
         </style>
     </head>
@@ -62,56 +71,67 @@
         <div id="main">
                 <h2>Topic & Purpose</h2>
                 <p> The Reality Bar Webpage is designed to provide customers 
-                    with a convenient way to search for and explore our cocktail menu. 
+                    with a convenient way to search and explore our cocktail menu. 
                     The website offers a platform for users to explore the bar's story, 
-                    signature drinks, and engage in a visually appealing cocktail search.
+                    signature drinks, engage in a cocktail search, and develop their own Favorite Drink List.
                 </p>
                 
-                <h2>Audience</h2>
-                <p> The primary audience for this website includes potential customers to the bar. 
-                    Designed for a diverse audience, the website caters to both those curious about the 
-                    bar's background and seasoned cocktail enthusiasts looking for signature drinks.
+                <h2>Instructions</h2>
+                <h4>Navigation Bar</h4>
+                <p> The webpage has a navigation bar which allows the user to jump around three sections
+                     -- About Us, Signature Drinks, and Search.
                 </p>
+                <img src="img/nav.png" alt="nav">
 
-                <h2>Design & Style</h2>
-                <p>The website adopts a modern and clean design with a user-friendly layout. 
-                    Responsive design principles ensure a seamless experience across various devices. 
-                    The color scheme, coupled with Bootstrap components, creates an inviting and visually 
-                    pleasing atmosphere. The website aims to evoke the calm ambiance of Reality Bar 
-                    while presenting information in an organized manner.
+                <h4>Adaptability to Browers</h4>
+                <p>About Us section gives user an introduction of the bar. Signature drinks provide users
+                    with information about Reality's popular drinks with ingredients and prices listed. Noticeably,
+                    the drinks display will adapt to the size of the browser (two drinks in a row in a narrower
+                    window vs. four drinks in a row in a wider window):
                 </p>
-                <h3> Color Palette</h3>
-                <img id="color" src="img/colors.jpg" alt="color">
-                <h3> Website Inspiration</h3>
-                <ol>
-                    <li><a href="https://coa.com.hk/">COA Hong Kong</a></li>
-                    <li><a href="https://react-vite-projects-17-cocktails.netlify.app/">Mix Master</a></li>
-                    <li><a href="http://304.itpwebdev.com/~projects/itp301/films_books_albums/">Favorite Books, Films, & Albums</a></li>
-                </ol>
-                <h2>Scope</h2>
-                <p>1. About Us: Introduction to the Reality Bar - includes the story, innovation, 
-                    and contact information <br>
-                    2. Signature Drinks: This section will contain bar's signature drinks. <br>
-                    3. Search Cocktail: API database that return results of the user's input.
+                <img src="img/two.png" alt="nav">
+                <img src="img/four.png" alt="nav">
+
+                <h4>Search from API and Display Error</h4>
+                <p>Users can search for keywords in the Cocktail Search section, and it will return results
+                    based on the API database. If user typed nothing, the console will return an error message 
+                    as shown:
                 </p>
-                <h2>Extras</h2>
-                <h3>JSON API Integration</h3>
+                <img src="img/empty.png" alt="empty">
+                <p>For example, if user types in keyword "punch" to search: </p>
+                <img src="img/punch.png" alt="punch">
+                <p>Then cocktails contain "punch" will be returned. The previous searched word "punch" will
+                    automatically be erased for the next search.
+                </p>
+                <img src="img/result.png" alt="result">
+
+                <h4>Event Handler to Create List of Favorite Drinks</h4>
                 <p>
-                    The project integrates with "TheCocktailDB" API, allowing real-time retrieval of cocktail data 
-                    for the search feature.
+                    After search results are returned, the user can choose to add drinks to their favorite 
+                    drink list by clicking the button "add to fav". They can add multiple drinks, however,
+                    repeated drinks can not be added. If the user adds the same drink twice, the error message
+                    will appear:
                 </p>
-                <h3>Event-driven DOM Manipulation</h3>
-                <p> The DOM manipulations dynamically render content, ensuring a smooth and interactive user interface.
-                     The website's navigation bar employs smooth scrolling, enhancing the user experience when navigating 
-                     through different sections.
-                </p>
-                <h2>Wireframes</h2>
-                <div class="img">
-                    <img src="img/about.png" alt="aboutus">
-                    <img src="img/sig.png" alt="sig">
-                    <img src="img/search.png" alt="search">
-                </div>
+                <img src="img/repeat.png" alt="repeat">
 
+                <h2>Extras</h2>
+                <h3>1. JSON API Integration</h3>
+                <p>The project integrates with "TheCocktailDB" API, allowing real-time retrieval of cocktail data 
+                    for the search feature. Keyword is the user-defined parameter that is passed to the API. CocktailDB API documentation 
+                    link: <a href="https://www.thecocktaildb.com/api.php">https://www.thecocktaildb.com/api.php</a>
+                </p>
+                <img src="img/api.png" alt="api">
+                <img id="api" src="img/database.png" alt="DB">
+
+                
+                <h3>2. Event-driven DOM Manipulation</h3>
+                <p> The navigation bar enables smooth scrolling to different sections on the page when navigation links are clicked. This is achieved 
+                    through the onClick event handlers that trigger the scrollToSection function, using the window.scrollTo method.
+                    The Cocktail component contributes by rendering individual cocktails and display "add to fav" button within each item. 
+                    Clicking on the button triggers the addToFavorites function, adding the selected cocktail to the favorites list. 
+                </p>
+                <br>
+                <br>
         </div>
 
         <div id="footer">

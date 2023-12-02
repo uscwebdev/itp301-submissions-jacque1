@@ -1,0 +1,207 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  font-family: 'Apple Chancery', cursive;
+  text-align: center;
+  color: #674188;
+  font-weight: bolder;
+  padding: 20px;
+  font-size: 5rem;
+}
+h1::after {
+  content: "\1F942";
+}
+
+h2{
+  color: #674188;
+  font-weight: bolder;
+  margin-left: 10px;
+  font-size: 2rem;
+}
+h3{
+  color: #674188;
+  margin-left: 30px;
+  font-size: 1.3em;
+}
+h4{
+  color: #674188;
+  font-weight: bolder;
+}
+.hours, .loc, .email{
+  padding-left: 35px;
+  margin-right: 15px;
+  padding-top: 10px;
+  font-size: large;
+  font-weight: 450;
+}
+.ingre{
+  font-family: fantasy;
+  font-size: 16px;
+}
+.sigprice{
+  font-family: cursive;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* NAVBAR Section */
+.Navbar {
+  background-color: #F7EFE5;
+  color: #674188;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.Navbar ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+}
+
+.Navbar li {
+  float: left;
+  margin: 15px;
+  cursor: pointer;
+}
+
+.Navbar li a {
+  display: block;
+  text-align: center;
+}
+
+/*ABOUT US SECTION*/
+.slogan{
+  padding: 30px;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  margin-left: 15px;
+  font-family: 'Apple Chancery';
+  color: #a982c0;
+  text-align: center;
+}
+
+a,p {
+  padding-left: 35px;
+  margin-right: 15px;
+}
+.contact{
+  margin-left: 10px;
+}
+
+
+/*Our Signature Drinks SECTION*/
+.drink img{
+  width: 50%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.sigdrink {
+  display: flex;
+  flex-wrap: wrap; 
+}
+
+.drink {
+  width: 250px;
+  text-align: center;
+  margin: 10px;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/*Find Drinks SECTION*/
+.search {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  outline: none;
+}
+
+.btn-primary {
+  background-color: #674188;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.results{
+  margin-bottom: 30px;
+}
+
+.img-container img {
+  width: 15%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.cocktails-form {
+  text-align: center;
+}
+
+/*FAV COCKTAILS*/
+.favorites{
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.btn-fav {
+  background-color: #e6caff; 
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.btn-fav:hover {
+  background-color: #a063c4; 
+}
+
+.cocktail-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border-style: solid;
+  border-color: #a982c0; 
+  padding: 10px;
+  max-width: 70%;
+  max-height: fit-content;
+}
+
+.cocktail-item img {
+  width: 20%;
+  height: auto;
+  border-radius: 10px;
+}
+.fav-drink{
+  margin-left: 30px;
+}
+
+.footer{
+  background-color: #F7EFE5;
+  padding: 15px;
+  color: #674188;
+  font-weight: 500;
+  text-align: center;
+}
